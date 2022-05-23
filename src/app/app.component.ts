@@ -3,6 +3,7 @@ import { Component, ViewChild } from '@angular/core';
 import { AgGridAngular } from 'ag-grid-angular';
 import { CellClickedEvent, ColDef, GridReadyEvent } from 'ag-grid-community';
 import { Observable } from 'rxjs';
+import { CustomTooltipComponent } from './custom-tooltip/custom-tooltip.component';
 
 @Component({
  selector: 'app-root',
@@ -13,16 +14,22 @@ export class AppComponent {
 
  // Each Column Definition results in one Column.
  public columnDefs: ColDef[] = [
-   { field: 'make'},
-   { field: 'model'},
-   { field: 'price' }
+   { field: 'make', tooltipField: 'make'},
+   { field: 'model', tooltipField: 'make'},
+   { field: 'price', tooltipField: 'make'}
  ];
 
  // DefaultColDef sets props common to all Columns
  public defaultColDef: ColDef = {
    sortable: true,
    filter: true,
+   resizable: true,
+   tooltipComponent: CustomTooltipComponent,
  };
+
+  public tooltipShowDelay = 300;
+  public tooltipHideDelay = 1000;
+  public rowData!: any[];
  
  // Data that gets displayed in the grid
  public rowData$!: Observable<any[]>;

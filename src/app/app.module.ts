@@ -3,10 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { AgGridModule } from 'ag-grid-angular';
 import { AppComponent } from './app.component';
+import { CustomTooltipComponent } from './custom-tooltip/custom-tooltip.component';
 
 @NgModule({
  declarations: [
-   AppComponent
+   AppComponent,
+   CustomTooltipComponent
  ],
  imports: [
    BrowserModule,

@@ -1,10 +1,15 @@
-@import 'ag-grid-community/dist/styles/ag-grid.css';
-@import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-
-html, body {
-   height: 100%;
-   width: 100%;
-   padding: 5px;
-   box-sizing: border-box;
-   -webkit-overflow-scrolling: touch;
-}
+.custom-tooltip {
+    width: 150px;
+    height: 70px;
+    border: 1px solid cornflowerblue;
+    overflow: hidden;
+  }
+  
+  .custom-tooltip p {
+    margin: 5px;
+    white-space: nowrap;
+  }
+  
+  .custom-tooltip p:first-of-type {
+    font-weight: bold;
+  }
